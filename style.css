@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1rem;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: Raleway, sans-serif;
+  transition: 0.3s;
+}
+body.dark {
+  background: black;
+  color: white;
+  .container {background: black;
+  }
+  header, main, .photos, .ebay, .hobbies, footer      {background: gray}
+}
+
+/* Container Grid Layout */
+.container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "photos photos photos"
+    "photos photos photos"
+    "ebay ebay hobbies"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 80px auto auto 60px; 
+  gap: 20px;
+  padding: 20px;
+  background: white;
+}
+
+/* Header */
+header {
+  grid-area: header;
+  background: #a6a6a6;
+  justify-content: space-between;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+header nav a {
+  color: black;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  background-color: cadetblue;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+/* Main Area */
+main {
+  grid-area: main;
+  background: #D3D3D3;
+  padding: 20px;
+}
+
+.photos {
+  grid-area: photos;
+  background: #D3D3D3;
+  padding: 20px;
+  text-align: center;
+}
+
+.photos img {
+  border: 5px solid black;
+  height: 480px;
+  max-width: 640px;
+  padding: 20px;
+}
+
+.ebay {
+  grid-area: ebay;
+  background: #D3D3D3;
+  padding: 10px;
+  text-align: left;
+}
+
+.hobbies {
+  grid-area: hobbies;
+  background: #D3D3D3;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  justify-content: center;
+  background: #a6a6a6;
+  color: black;
+  display: flex;
+  padding: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "main"
+      "photos"
+      "ebay"
+      "hobbies"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
