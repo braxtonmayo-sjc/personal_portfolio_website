@@ -73,12 +73,41 @@ main {
   text-align: center;
 }
 
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.slides img {
+  display: none; /* Hide all images by default */
+  width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.slides img.active {
+  display: block; /* Only show the active image */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#prevBtn { left: 10px; }
+
+#nextBtn { right: 10px; }
+
+/* Delete??
 .photos img {
   border: 5px solid black;
   height: 480px;
   max-width: 640px;
   padding: 20px;
-}
+} */
 
 .ebay {
   grid-area: ebay;
